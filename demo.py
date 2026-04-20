@@ -1,8 +1,11 @@
+# 安装依赖：pip install pandas openpyxl openai
+# pandas：处理Excel数据；openpyxl：读取Excel文件；openai：调用大模型API
+
 # 1，第一步文件导入+数据清洗
 import pandas as pd
 
 # 读取Excel文件（请将路径替换为实际文件路径）然后赋值
-file_path = "电商数据.xlsx"
+file_path = "请替换为你的电商数据文件路径（如：./电商数据.xlsx）"
 # 返回二维表格数据结构赋值给df
 df = pd.read_excel(file_path)
 
@@ -64,7 +67,7 @@ def prepare_summary(df_cleaned):
 # ---------- 2.2 调用 qvq 大模型进行分析 ----------
 def analyze_with_qvq(data_text, api_key):
     """
-    使用 DeepSeek API 进行智能分析
+    使用 qvq API 进行智能分析
     API 文档：https://api-docs.deepseek.com/
     """
     client = OpenAI(
@@ -122,9 +125,9 @@ if __name__ == "__main__":
     print(summary_text)
 
     # 2. 设置你的 qvq API Key（请替换为真实 Key）
-    DEEPSEEK_API_KEY = "sk-a884fa1d0a2e4f20a0e7e84c09a6210e"
+    DEEPSEEK_API_KEY = "请替换为你的 DeepSeek API Key（从阿里云百炼获取）"
 
-    if DEEPSEEK_API_KEY == "sk-a884fa1d0a2e4f20a0e7e84c09a6210e":
+    if DEEPSEEK_API_KEY == "请替换为你的 DeepSeek API Key（从阿里云百炼获取）":
         print("\n🤖 正在调用 qvq 进行分析，请稍候...")
         print("\n" + "=" * 50)
         print("🎯 大模型分析结论")
